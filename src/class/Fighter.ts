@@ -1,5 +1,5 @@
 /* Fighter class definition */
-import { IFighter, IBighter } from "../Interface";
+import { IFighter } from "../Interface";
 import { Weapon } from "./Weapon";
 import { Shield } from "./Shield";
 import { MAX_LIFE } from "../const";
@@ -24,10 +24,10 @@ export class Fighter implements IFighter {
   }
 
   fight(defender: Fighter) {
-    const previousLife:number = defender.life;
+    const previousLife: number = defender.life;
 
     const attack = this.getDamage();
-    const randomAttack= Math.floor(Math.random() * attack);
+    const randomAttack = Math.floor(Math.random() * attack);
     let attackValue = randomAttack - defender.getDefense();
     if (attackValue <= 0) {
       attackValue = 1;
@@ -43,7 +43,9 @@ export class Fighter implements IFighter {
       "🗡️  attacks \u{1F6E1} ",
       defender.name,
       "(",
-       previousLife,"->", defender.life,
+      previousLife,
+      "->",
+      defender.life,
       "💙)"
     );
 
@@ -87,9 +89,9 @@ export class Fighter implements IFighter {
     this.shield = shield;
     this.isHardMode ? (this.weapon = null) : (this.weapon = this.weapon);
   }
-    
-    setStrengthValue(strength: number) {
-      this.strength = strength;
+
+  setStrengthValue(strength: number) {
+    this.strength = strength;
   }
 }
 

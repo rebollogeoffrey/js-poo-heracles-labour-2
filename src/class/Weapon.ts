@@ -1,14 +1,15 @@
-export class Weapon {
-    name:string;
-    damage:number = 10;
+import { IWeapon } from "../Interface";
 
-    constructor(name:string, damage?:number){
-        this.name=name;
-        if(damage !== undefined){
-            this.damage=damage;
-        }
+export class Weapon implements IWeapon {
+  name: string;
+  damage: number = 10;
+
+  constructor(name: string, damage?: number) {
+    this.name = name;
+    if (damage !== undefined) {
+      this.damage = damage;
     }
-
+  }
 }
 
-module.exports = {Weapon}
+module.exports = { Weapon };

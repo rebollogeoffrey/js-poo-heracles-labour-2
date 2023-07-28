@@ -2,13 +2,11 @@ import { IShield } from "../Interface";
 
 export class Shield implements IShield {
   name: string;
-  protection: number = 10;
+  protection: number;
 
-  constructor(name: string, protection?: number) {
+  constructor(name: string, protection: number = 10) {
     this.name = name;
-    if (protection !== undefined) {
-      this.protection = protection;
-    }
+    this.protection = protection;
   }
 }
 

@@ -2,13 +2,11 @@ import { IWeapon } from "../Interface";
 
 export class Weapon implements IWeapon {
   name: string;
-  damage: number = 10;
+  damage: number;
 
-  constructor(name: string, damage?: number) {
+  constructor(name: string, damage: number = 10) {
     this.name = name;
-    if (damage !== undefined) {
-      this.damage = damage;
-    }
+    this.damage = damage;
   }
 }
 

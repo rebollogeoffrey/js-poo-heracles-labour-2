@@ -6,28 +6,33 @@ import { Weapon } from "./class/Weapon";
 import { Shield } from "./class/Shield";
 
 // FIGHTERS
-const Pebble = new Fighter(
+const Pebble: Fighter = new Fighter(
   "\u{1FAA8}  Petit caillou, The True French Pebble",
   1,
   1
 );
-const Human: Fighter = new Fighter("\u{1F938} Heracles", 20, 6);
-const Lion: Fighter = new Fighter("\u{1F981} Nemean Lion", 11, 13);
-const Sanglier: Fighter = new Fighter("🐗 Boar of Erymanthe", 20, 25);
+/* : Fighter is not necessary because "new Fighter" is already typed */
+
+const Human = new Fighter("\u{1F938} Heracles", 20, 6);
+const Lion = new Fighter("\u{1F981} Nemean Lion", 11, 13);
+const Sanglier = new Fighter("🐗 Boar of Erymanthe", 20, 25);
 
 // WEAPONS
 const Stick: Weapon = new Weapon("The Stick ?!"); // Tribute to the best's anecdoctes group ever
-const Paper: Weapon = new Weapon("Paper"); // Fear the paper cut!
-const Bondage: Weapon = new Weapon("Bondage", -10); //Fear the heal // Not only moral support
-const Sword: Weapon = new Weapon("Épée");
-const HotPepper: Weapon = new Weapon("Hot pepper", 100); //Burn body, spirit and soul in one touch
-const Napoleon: Weapon = new Weapon("Three centimeters", 100); // Small range but huge damage
+/* : Weapon is not necessary because "new Weapon" is already typed */
+const Paper = new Weapon("Paper"); // Fear the paper cut!
+const Bondage = new Weapon("Bondage", -10); //Fear the heal // Not only moral support
+const Sword = new Weapon("Épée");
+const HotPepper = new Weapon("Hot pepper", 100); //Burn body, spirit and soul in one touch
+const Napoleon = new Weapon("Three centimeters", 100); // Small range but huge damage
 
 //SHIELDS
 const Stack: Shield = new Shield("The Stack !?"); // Tribute to the best's anecdoctes group ever
-const TheLook: Shield = new Shield("The Look");
-const Wall: Shield = new Shield("Brick's wall");
-const Hylian: Shield = new Shield("Hylian Shield");
+/* : Shield is not necessary because "new Shield" is already typed */
+
+const TheLook = new Shield("The Look");
+const Wall = new Shield("Brick's wall");
+const Hylian = new Shield("Hylian Shield");
 
 const displayTxtIntro = (Monster: Fighter) => {
   console.log(

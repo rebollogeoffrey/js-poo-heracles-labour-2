@@ -28,7 +28,7 @@ export class Fighter implements IFighter {
 
     const attack = this.getDamage();
     const randomAttack = Math.floor(Math.random() * attack);
-    let attackValue = randomAttack - defender.getDefense();
+    let attackValue = Math.max(randomAttack - defender.getDefense(), 0);
     if (attackValue <= 0) {
       attackValue = 1;
     }
@@ -52,7 +52,7 @@ export class Fighter implements IFighter {
     return defender.life;
   }
 
-  getDamage() {
+  private getDamage() {
     if (this.weapon !== null) {
       return this.strength + this.weapon.damage;
     } else {
@@ -60,7 +60,7 @@ export class Fighter implements IFighter {
     }
   }
 
-  getDefense() {
+  private getDefense() {
     if (this.shield !== null) {
       return this.shield.protection + this.dexterity;
     } else {
@@ -69,11 +69,7 @@ export class Fighter implements IFighter {
   }
 
   isAlive() {
-    if (this.life) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.life ? true : false;
   }
 
   switchIsHardMode() {
